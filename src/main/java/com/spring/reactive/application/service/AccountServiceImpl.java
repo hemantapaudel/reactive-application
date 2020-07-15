@@ -22,7 +22,7 @@ public class AccountServiceImpl implements AccountService {
     public AccountServiceImpl(AccountRepository accountRepository) {
 
         this.accountRepository = accountRepository;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             Account account = new Account();
             account.setId("" + i);
             account.setAccountNumber("123" + i + "123" + i);

@@ -26,13 +26,19 @@ public class FluxAndMonoController {
     public Flux<String> getFluxStream(){
 
         return Flux.just("test-data1","test-data2","test-data3","test-data4")
-                .delayElements(Duration.ofSeconds(2))
+                .delayElements(Duration.ofSeconds(1))
                 .log();
 
 
     }
 
+    @GetMapping(value = "/fluxinterval",produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Flux<Long> fluxInterval(){
+        return Flux.interval(Duration.ofSeconds(1))
+                .log();
 
+
+    }
 
 
 
